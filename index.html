@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Test Your Skill</title>
+
+    <!-- Style -->
+    <style media="screen">
+    input#word-input {
+    color: #fff;
+    font-size: 20px;
+  }
+  header h4{
+    text-transform: uppercase;
+  }
+  #message{
+        color: #1de9b6;
+  }
+
+input#word-input.wrong {
+      color: #fff;
+      font-size: 20px;
+      border-bottom: red solid 1px;
+      animation: 2 shake 0.25s ease-in-out;
+  }
+
+  @keyframes shake{
+    0%{
+
+      margin-left: 0px;
+    }
+    50%{
+      margin-left: -40px;
+    }
+    100%{
+    margin-right: -40px;
+    }
+  }
+  .social-links{
+    position:fixed;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+
+  }
+  .menus{
+    position:fixed;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .menus a{
+    margin-bottom: 10px;
+  }
+  .social-links a{
+    margin-bottom: 10px;
+  }
+  .fb {
+    background: #3b5998;
+  }
+  .fb:hover{
+    background: #3b5998;
+  }
+  footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+  }
+  footer .card-panel{
+    margin: 0px;
+    padding: 10px;
+  }
+  .modal .modal-content {
+    padding: 15px;
+}
+    </style>
+
+  </head>
+
+
+  <body class="blue-grey darken-3">
+
+<header class="grey darken-1 center-align">
+  <h4 class="white-text " style="padding: 5px;"> Word Beater </h4>
+</header>
+
+<div class="social-links">
+<a class="btn-floating btn-large waves-effect waves-light fb" title="facebook" ><i class="fab fa-facebook-f"></i></a><br>
+<a class="btn-floating btn-large waves-effect waves-light black" title="github"><i class="fab fa-github"></i></a><br>
+<a class="btn-floating btn-large waves-effect waves-light blue" title="linkedin"><i class="fab fa-linkedin-in"></i></a></br>
+<a class="btn-floating btn-large waves-effect waves-light li" title="Share"><i class="fas fa-share-alt"></i></a></br>
+</div>
+
+
+<div class="menus">
+<a class="btn-floating btn-large waves-effect waves-light modal-trigger" title="help" href="#modal1"><i class="fas fa-question"></i></a><br>
+<a class="btn-floating btn-large waves-effect waves-light black modal-trigger" title="Top Scorer" href="#modal2"><i class="fas fa-star"></i></a><br>
+</div>
+
+
+<!-- help modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Instructions</h4>
+      <hr>
+      <p>Type each word in the given amount of seconds to score, To play again
+      just type the current word. Your score will reset.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<!-- // -->
+
+<!-- top scorer modal -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4><center>Top 5</center></h4>
+      <hr>
+      <table>
+         <thead>
+           <tr>
+               <th>Name</th>
+               <th>Score</th>
+           </tr>
+         </thead>
+
+         <tbody>
+           <tr>
+             <td>Alvin</td>
+             <td>00</td>
+           </tr>
+           <tr>
+             <td>Alan</td>
+             <td>00</td>
+           </tr>
+           <tr>
+             <td>Jonathan</td>
+             <td>00</td>
+           </tr>
+           <tr>
+             <td>Jonathan</td>
+             <td>00</td>
+           </tr>
+           <tr>
+             <td>Jonathan</td>
+             <td>00</td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-light btn">Ok</a>
+    </div>
+  </div>
+<!-- // -->
+<div class="container center-align">
+  <!-- Word and Input -->
+
+  <div class="row">
+      <div class="col s12">
+        <p class="flow-text white-text center-align"> Type The Given Word Within <span id="seconds" style="color: #1de9b6;"> 5 </span> Seconds </p>
+        <h2 class="white-text" id="current-word"> hello </h2>
+        <!-- Input Box -->
+        <div class="input-field col s12">
+            <input id="word-input" type="text" class="validate " autofocus>
+            <label for="word-input">Start Typing...</label>
+        </div>
+      </div>
+  </div>
+
+  <section>
+    <div class="row">
+      <div class="col s12">
+          <p id="message" class="flow-text "></p>
+      </div>
+        <div class="col s6">
+            <h3 class="white-text">Time Left: <span id="time">0</span></h3>
+        </div>
+        <div class="col s6">
+            <h3 class="white-text">
+              Score: <span id="score">0</span>
+            </h3>
+        </div>
+    </div>
+  </section>
+
+
+</div>
+
+<footer >
+    <div class="card-panel teal grey darken-4 white-text center">
+      &copy; 2018 Starboy Dev Productions
+    </div>
+</footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Main.JS -->
+    <script src="./main.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.modal').modal();
+      });
+    </script>
+  </body>
+</html>
